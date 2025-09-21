@@ -10,6 +10,7 @@ blog-turborepo/
 ├── turbo.json
 ├── apps/
 │   ├── api/
+│   │   ├── .env.example
 │   │   ├── eslint.config.mjs
 │   │   ├── package.json
 │   │   ├── README.md
@@ -187,9 +188,13 @@ npm install
 2. Set up environment variables:
 
    ```bash
-   # Create .env file in apps/api directory
-   DATABASE_URL="file:./prisma/dev.db"
-   JWT_SECRET="your-jwt-secret-key"
+   # Copy the example environment file
+   cp .env.example .env
+
+   # Edit the .env file with your specific values
+   # DATABASE_URL="file:./dev.db"
+   # JWT_SECRET="your-jwt-secret-key"
+   # JWT_EXPIRES_IN="24h"
    ```
 
 3. Run database migrations:
